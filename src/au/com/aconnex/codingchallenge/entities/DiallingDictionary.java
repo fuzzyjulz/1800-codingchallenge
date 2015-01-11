@@ -1,11 +1,11 @@
-package au.com.aconnex.codingchallenge.dictionary;
+package au.com.aconnex.codingchallenge.entities;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import au.com.aconnex.codingchallenge.DigitTranslatorService;
+import au.com.aconnex.codingchallenge.services.DigitTranslatorService;
 
 /** Generates a dictionary of words for the digits on a phone */
 public class DiallingDictionary implements Dictionary {

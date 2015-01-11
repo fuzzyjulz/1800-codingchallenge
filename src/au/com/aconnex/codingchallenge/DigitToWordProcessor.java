@@ -3,7 +3,7 @@ package au.com.aconnex.codingchallenge;
 import java.util.ArrayList;
 import java.util.List;
 
-import au.com.aconnex.codingchallenge.dictionary.DiallingDictionary;
+import au.com.aconnex.codingchallenge.entities.DiallingDictionary;
 
 
 /** Processes digits into words using the given dialling dictionary*/

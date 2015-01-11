@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import au.com.aconnex.codingchallenge.DigitTranslatorService;
+import au.com.aconnex.codingchallenge.services.DigitTranslatorService;
 
 public class DigitTranslatorServiceTest{
 	@Test

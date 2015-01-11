@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.Test;
 
-import au.com.aconnex.codingchallenge.dictionary.DiallingDictionary;
+import au.com.aconnex.codingchallenge.entities.DiallingDictionary;
 
 
 

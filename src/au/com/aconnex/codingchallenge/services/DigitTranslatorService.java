@@ -1,4 +1,4 @@
-package au.com.aconnex.codingchallenge;
+package au.com.aconnex.codingchallenge.services;
 
 import java.util.HashMap;
 import java.util.Map;

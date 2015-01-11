@@ -7,7 +7,8 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import au.com.aconnex.codingchallenge.dictionary.DiallingDictionary;
+import au.com.aconnex.codingchallenge.entities.DiallingDictionary;
+import au.com.aconnex.codingchallenge.utils.FileImportUtils;
 
 
 
