@@ -2,8 +2,6 @@ package au.com.aconnex.codingchallenge;
 
 import static org.junit.Assert.*;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.List;
 
 import org.junit.Test;

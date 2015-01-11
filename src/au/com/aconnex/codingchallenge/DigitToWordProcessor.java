@@ -6,15 +6,20 @@ import java.util.List;
 import au.com.aconnex.codingchallenge.dictionary.DiallingDictionary;
 
 
-
+/** Processes digits into words using the given dialling dictionary*/
 public class DigitToWordProcessor {
 	private final DiallingDictionary dict;
 	private int consecutiveDigits = 1;
 	
+	/** Creates a new processor */
 	public DigitToWordProcessor(DiallingDictionary dict) {
 		this.dict = dict;
 	}
 
+	/** Processes the given line into digits using the given dictionary.
+	 *  As part of this service a number of consecutive digits can be left as
+	 *  digits - if no word has been found. This is set by setConsecutiveDigits
+	 */
 	public List<String> getWordsForDigits(String line) {
 		List<String> words = new ArrayList<>();
 		int index = 0;
@@ -55,6 +60,7 @@ public class DigitToWordProcessor {
 		return words;
 	}
 
+	/* Sets the number of consecutive digits to allow when processing a word*/
 	public void setConsecutiveDigits(int consecutiveDigits) {
 		this.consecutiveDigits = consecutiveDigits;
 	}

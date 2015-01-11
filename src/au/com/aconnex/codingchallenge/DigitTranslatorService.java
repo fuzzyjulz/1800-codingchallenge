@@ -4,12 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 
+/** The digit translator service allows a word to be translated into telephone digits or vise versa */
 public class DigitTranslatorService {
 	Map<Character, Character> digitToLetterTranslation;
 	Map<Character, char[]> letterToDigitTranslation;
 
 	private static DigitTranslatorService instance = new DigitTranslatorService();
 	
+	/** Gets a digit translator service*/
+	public static DigitTranslatorService getInstance() {
+		return instance;
+	}
+
+	/** Translates the given word into digits.
+	 * 
+	 * @throws DigitTranslationException if the letter couldn't be translated*/
 	public String translateWordToDigit(String word) throws DigitTranslationException {
 		StringBuffer translation = new StringBuffer();
 		for (Character letter : word.toCharArray()) {
@@ -25,10 +34,7 @@ public class DigitTranslatorService {
 		addMappings();
 	}
 	
-	public static DigitTranslatorService getInstance() {
-		return instance;
-	}
-	
+	/** Adds all the mappings for digits to numbers*/
 	private void addMappings() {
 		letterToDigitTranslation = new HashMap<Character, char[]>();
 		letterToDigitTranslation.put('2', new char[]{'A','B','C'});
@@ -43,6 +49,7 @@ public class DigitTranslatorService {
 		generateDigitToLetterTranslation();
 	}
 
+	/** Constructs the Digit to Letter map from the Letter to Digit one.*/
 	private void generateDigitToLetterTranslation() {
 		digitToLetterTranslation = new HashMap<Character, Character>();
 		for (Entry<Character, char[]> translation : letterToDigitTranslation.entrySet()) {
@@ -52,6 +59,7 @@ public class DigitTranslatorService {
 		}
 	}
 
+	/** An exception when translating letters. */
 	public static class DigitTranslationException extends RuntimeException {
 		private static final long serialVersionUID = 6062282009704918272L;
 

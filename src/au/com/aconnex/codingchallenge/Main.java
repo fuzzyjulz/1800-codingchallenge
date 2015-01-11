@@ -11,7 +11,7 @@ import au.com.aconnex.codingchallenge.dictionary.DiallingDictionary;
 
 
 
-
+/** The main entry class into the project*/
 public class Main {
 	private DiallingDictionary dictionary = new DiallingDictionary();
 	private List<String> phoneNumberFiles = new ArrayList<String>();
@@ -26,7 +26,7 @@ public class Main {
 		if (main.phoneNumberFiles.isEmpty()) {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 			String commandStr;
-			out("Please enter phone numbers to process into words:");
+			out("Please enter phone numbers to process into words(a empty line will exit):");
 			while (!(commandStr = reader.readLine()).isEmpty()) {
 				commandStr = FileImportUtils.clensePhoneNumberLine(commandStr);
 				main.processPhoneNumber(commandStr);
@@ -36,6 +36,7 @@ public class Main {
 		}
 	}
 	
+	/** Processes the arguments and performs the actions requested*/
 	private void processArguments(String[] args) throws Exception {
 		boolean foundDictionary = false;
 		for (int index = 0; index < args.length; index++) {
@@ -57,6 +58,7 @@ public class Main {
 		}
 	}
 
+	/** Process the phone numbers and display the digits returned for all phone numbers requested. */
 	private void processPhoneNumberFiles() throws FileNotFoundException, IOException {
 		for (String phoneNumberFile : phoneNumberFiles) {
 			for (String phoneNumber : FileImportUtils.importDigitsFromFile(phoneNumberFile)) {
@@ -65,6 +67,7 @@ public class Main {
 		}
 	}
 	
+	/** Outputs the letters returned for a single set of digits.*/
 	private void processPhoneNumber(String phoneNumber) {
 		out("Processing digits:"+phoneNumber);
 		for (String word : dwp.getWordsForDigits(phoneNumber)) {
@@ -72,6 +75,7 @@ public class Main {
 		}
 	}
 
+	/** Output the given message to the user */
 	private static void out(String string) {
 		System.out.println(string);
 	}
